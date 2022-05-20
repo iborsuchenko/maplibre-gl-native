@@ -72,9 +72,6 @@ jobs:
             libcurl4-openssl-dev \
             libglfw3-dev \
             libuv1-dev \
-            g++-10 \
-            libc++-9-dev \
-            libc++abi-9-dev
           /usr/sbin/update-ccache-symlinks
           
       - name: Setup node
@@ -116,7 +113,7 @@ jobs:
       - name: CMake
         if: runner.os == 'Linux'
         run: |
-          cmake . -B build -G Ninja -DCMAKE_CXX_COMPILER_LAUNCHER=ccache -DCMAKE_C_COMPILER=gcc-10 -DCMAKE_CXX_COMPILER=g++-10
+          cmake . -B build -G Ninja -DCMAKE_CXX_COMPILER_LAUNCHER=ccache -DCMAKE_C_COMPILER=gcc-7 -DCMAKE_CXX_COMPILER=g++-7
 
       - name: Build
         run: |
